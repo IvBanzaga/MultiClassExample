@@ -33,4 +33,9 @@ public class UserListActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddUserActivity.class);
         startActivity(intent);
     }
+
+    public void volver(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
