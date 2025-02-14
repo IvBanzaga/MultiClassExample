@@ -1,5 +1,6 @@
 package com.vanzaga.multiclassexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -35,6 +36,8 @@ public class UserDetailActivity extends AppCompatActivity {
     }
 
     public void regresar(View view) {
+        Intent regresar = new Intent(this, MainActivity.class);
+        startActivity(regresar);
 
     }
 
