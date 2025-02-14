@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MultiClassExample</string>
+    <string name="formulario">Ingrese sus datos aquí</string>
+    <string name="btn_submit">Enviar Datos</string>
+    <string name="btn_regresar">Regresar</string>
+    <string name="user_details">Detalles del Usuario</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="name">Nombre real</string>
+    <string name="email">Email</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="codigo_postal">Código Postal</string>">
+</resources>
