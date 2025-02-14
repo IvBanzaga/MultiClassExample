@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiClassExample"
         tools:targetApi="31">
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".UserListActivity" />
         <activity android:name=".UserDetailActivity" />
         <activity
             android:name=".MainActivity"

@@ -25,22 +25,30 @@ public class UserDetailActivity extends AppCompatActivity {
         textView_ciudad = findViewById(R.id.textView_ciudad);
         textView_codigoPostal = findViewById(R.id.textView_codigoPostal);
 
-        // Se obtiene el objeto DataManager de la actividad anterior (MainActivity) usando getIntent().
-        DataManager dataManager = (DataManager) getIntent().getSerializableExtra("dataManager");
-
+        // Se obtiene la instancia de DataManager
+        DataManager dataManager = DataManager.getInstance();
 
         // Se obtienen los datos de usuario y dirección de usuario del DataManager y se muestran en los TextView.
-        User user = dataManager.getUsers().get(0);
-            textView_userName.setText("Nombre de usuario: " + user.getUsername());
-            textView_nombre.setText("Nombre real: " + user.getName());
-            textView_userEmail.setText("Email: " + user.getEmail());
+        User user = dataManager.getUsers().get(dataManager.getUsers().size() - 1);
+        textView_userName.setText("Nombre de usuario: " + user.getUsername());
+        textView_nombre.setText("Nombre real: " + user.getName());
+        textView_userEmail.setText("Email: " + user.getEmail());
 
-        UserAddress address = dataManager.getUserAddresses().get(0);
-            textView_ciudad.setText("Ciudad: " + address.getCiudad());
-            textView_codigoPostal.setText("Código postal: " + address.getPostalCode());
-
+        UserAddress address = dataManager.getUserAddresses().get(dataManager.getUserAddresses().size() - 1);
+        textView_ciudad.setText("Ciudad: " + address.getCiudad());
+        textView_codigoPostal.setText("Código postal: " + address.getPostalCode());
     }
 
+    public void regresar(View view) {
+        Intent regresar = new Intent(this, MainActivity.class);
+        startActivity(regresar);
+    }
+
+    public void viewList(View view) {
+        Intent intent = new Intent(this, UserListActivity.class);
+        startActivity(intent);
+    }
+}
     /*
         User user = dataManager.getUsers().get(0);
         StringBuilder userNameBuilder = new StringBuilder();
@@ -64,11 +72,3 @@ public class UserDetailActivity extends AppCompatActivity {
         codigoPostalBuilder.append("Código postal: ").append(address.getPostalCode());
         textView_codigoPostal.setText(codigoPostalBuilder.toString());
         */
-
-    public void regresar(View view) {
-        Intent regresar = new Intent(this, MainActivity.class);
-        startActivity(regresar);
-
-    }
-
-}

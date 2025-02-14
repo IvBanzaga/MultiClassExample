@@ -14,8 +14,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/app_name"
-        />
+        app:title="@string/app_name">
+
+        <Button
+            android:id="@+id/button_view_list"
+            style="@style/Button"
+            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:onClick="viewList"
+            android:text="Ver Lista"
+            tools:layout_editor_absoluteX="246dp"
+            tools:layout_editor_absoluteY="11dp" />
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/textView_userName"

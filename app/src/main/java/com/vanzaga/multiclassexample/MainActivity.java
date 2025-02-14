@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
-import com.vanzaga.multiclassexample.DataManager;
 import com.vanzaga.multiclassexample.MainClasses.User;
 import com.vanzaga.multiclassexample.MainClasses.UserAddress;
 
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPostalCode = findViewById(R.id.editText_codigoPostal);
         btnSubmit = findViewById(R.id.btnSubmit);
 
-        // Se crea un objeto DataManager para manejar los datos de los usuarios
-        DataManager dataManager = new DataManager();
+        // Se obtiene la instancia de DataManager
+        DataManager dataManager = DataManager.getInstance();
 
         // Se configuran los OnClickListener para el botón btnSubmit
         btnSubmit.setOnClickListener(view -> {
@@ -43,13 +42,11 @@ public class MainActivity extends AppCompatActivity {
             User user = new User(username, nombre, email);
             UserAddress address = new UserAddress(ciudad, postalCode);
 
-            // Los objetos se agregan a DataManager y se pasa DataManager a la
-            // siguiente actividad (UserDetailActivity) usando Intent.
+            // Los objetos se agregan a DataManager
             dataManager.addUser(user);
             dataManager.addUserAddress(address);
 
             Intent intent = new Intent(MainActivity.this, UserDetailActivity.class);
-            intent.putExtra("dataManager", dataManager);
             startActivity(intent);
         });
     }
